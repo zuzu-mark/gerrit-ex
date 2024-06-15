@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+	<!-- https://at-aka.blogspot.com/2009/02/repo-manifest.html -->
   <remote  name="origin"
-	  fetch="http://localhost"/>
+	  fetch="http://localhost"
+	  review="http://localhost"/>
 
   <default revision="master"
            remote="origin" />
