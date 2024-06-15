@@ -26,8 +26,8 @@ services:
     environment:
       - LDAP_ADMIN_PASSWORD=secret
     volumes:
-      - /external/gerrit/ldap/var:/var/lib/ldap
-      - /external/gerrit/ldap/etc:/etc/ldap/slapd.d
+      - ./external/gerrit/ldap/var:/var/lib/ldap
+      - ./external/gerrit/ldap/etc:/etc/ldap/slapd.d
 
   ldap-admin:
     image: docker.io/osixia/phpldapadmin
@@ -35,3 +35,8 @@ services:
       - "6443:443"
     environment:
       - PHPLDAPADMIN_LDAP_HOSTS=ldap
+
+networks:
+  default:
+    name: growi-docker-compose_default
+    external: true
